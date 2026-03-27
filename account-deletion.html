@@ -3,93 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZedApp – حذف الحساب</title>
+<title>ZedApp – Profile & Delete Account</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  /* Header simulating Profile page */
-  .header {
-    background-color: #6200ea;
-    color: white;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header h1 {
-    margin: 0;
-    font-size: 20px;
-  }
-  .settings-menu {
-    position: relative;
-  }
-  .settings-button {
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-  }
-  .dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 10;
-    min-width: 200px;
-  }
-  .dropdown a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #333;
-  }
-  .dropdown a.delete {
-    color: red;
-    font-weight: bold;
-  }
-  .dropdown a:hover {
-    background-color: #f0f0f0;
-  }
-  /* Content explanation */
-  .content {
-    padding: 20px;
-  }
-  h2 {
-    color: #6200ea;
-    margin-top: 20px;
-  }
-  ul {
-    padding-right: 20px;
-  }
-  p.note {
-    font-weight: bold;
-    color: #d32f2f;
-  }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #777;
-    text-align: center;
-    padding-bottom: 20px;
-  }
+  body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
+  /* Header البروفيل */
+  .header { background:#6200EA; color:white; padding:16px; display:flex; justify-content:space-between; align-items:center; }
+  .header h1 { margin:0; font-size:20px; }
+  /* ثلاث نقاط الإعدادات */
+  .settings { position:relative; }
+  .settings button { font-size:24px; background:none; border:none; color:white; cursor:pointer; }
+  /* القائمة المنسدلة */
+  .dropdown { display:none; position:absolute; right:0; top:40px; background:white; box-shadow:0 4px 6px rgba(0,0,0,0.1); border-radius:8px; min-width:200px; z-index:10; }
+  .dropdown a { display:block; padding:12px 16px; text-decoration:none; color:#333; }
+  .dropdown a.delete { color:red; font-weight:bold; }
+  .dropdown a:hover { background:#f0f0f0; }
+  /* المحتوى أسفل الصفحة */
+  .content { padding:20px; }
+  h2 { color:#6200EA; margin-top:20px; }
+  ul { padding-right:20px; }
+  p.note { color:#d32f2f; font-weight:bold; }
+  footer { text-align:center; color:#777; margin-top:30px; font-size:14px; padding-bottom:20px; }
 </style>
 </head>
 <body>
 
-<!-- Header simulating Profile page with settings -->
+<!-- Header البروفيل -->
 <div class="header">
   <h1>ZedApp – البروفيل</h1>
-  <div class="settings-menu">
-    <button class="settings-button" onclick="toggleDropdown()">⋮</button>
+  <div class="settings">
+    <button onclick="toggleDropdown()">⋮</button>
+    <!-- القائمة المنسدلة -->
     <div class="dropdown" id="dropdownMenu">
       <a href="#">تعديل البروفيل</a>
       <a href="#">الخصوصية</a>
@@ -99,22 +42,22 @@
   </div>
 </div>
 
-<!-- Content explaining account deletion -->
+<!-- المحتوى التعليمي -->
 <div class="content">
   <h2>Account Deletion – ZedApp</h2>
-  <p>To permanently delete your ZedApp account, please follow these steps:</p>
+  <p>To permanently delete your ZedApp account, follow these steps:</p>
   <ul>
-    <li>Open the ZedApp application on your device.</li>
+    <li>Open the ZedApp app on your device.</li>
     <li>Go to your Profile page.</li>
     <li>Scroll down to the bottom of the page.</li>
-    <li>Tap on Delete Account.</li>
+    <li>Tap on <strong>Delete Account</strong>.</li>
     <li>Confirm the deletion when prompted.</li>
   </ul>
   <p><strong>What happens after deletion:</strong></p>
   <ul>
     <li>Your account will be permanently removed from Firebase Authentication.</li>
     <li>All data associated with your account will be permanently deleted from Firebase Firestore.</li>
-    <li>No personal data will be retained after the deletion process.</li>
+    <li>No personal data will be retained.</li>
   </ul>
   <p class="note">Important: Account deletion is final and cannot be undone.</p>
 
@@ -124,44 +67,43 @@
     <li>افتح تطبيق ZedApp على جهازك.</li>
     <li>انتقل إلى الملف الشخصي.</li>
     <li>مرّر للأسفل حتى نهاية الصفحة.</li>
-    <li>اضغط على زر "حذف الحساب".</li>
+    <li>اضغط على زر <strong>حذف الحساب</strong>.</li>
     <li>قم بتأكيد عملية الحذف.</li>
   </ul>
   <p><strong>ماذا يحدث بعد الحذف:</strong></p>
   <ul>
-    <li>يتم حذف الحساب نهائيًا من نظام المصادقة Firebase Authentication.</li>
+    <li>يتم حذف الحساب نهائيًا من Firebase Authentication.</li>
     <li>يتم حذف جميع البيانات المرتبطة بالحساب من Firebase Firestore.</li>
-    <li>لا يتم الاحتفاظ بأي بيانات شخصية بعد الحذف.</li>
+    <li>لا يتم الاحتفاظ بأي بيانات بعد الحذف.</li>
   </ul>
   <p class="note">ملاحظة: عملية حذف الحساب نهائية ولا يمكن التراجع عنها.</p>
+
+  <p>لتوضيح العملية:</p>
+  <ul>
+    <li>1️⃣ اضغط على الثلاث نقاط في أعلى صفحة البروفيل (⋮).</li>
+    <li>2️⃣ ستظهر القائمة المنسدلة.</li>
+    <li>3️⃣ الخيار الرابع باللون الأحمر هو "حذف الحساب نهائيًا".</li>
+    <li>4️⃣ اضغط عليه لتأكيد الحذف.</li>
+  </ul>
 </div>
 
-<footer>
-  © 2026 ZedApp – جميع الحقوق محفوظة
-</footer>
+<footer>© 2026 ZedApp – جميع الحقوق محفوظة</footer>
 
 <script>
 function toggleDropdown() {
   const menu = document.getElementById('dropdownMenu');
   menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
-
 function confirmDelete() {
-  const confirmAction = confirm("هل أنت متأكد أنك تريد حذف حسابك نهائيًا من ZedApp؟ هذا الإجراء لا يمكن التراجع عنه.");
-  if(confirmAction){
-    alert("تم حذف الحساب."); // هنا يمكن ربطه بالـ API داخل التطبيق
-  }
+  alert("تم حذف الحساب."); // محاكاة الحذف، يمكن ربطه بالـ API داخل التطبيق
 }
-
+// إخفاء القائمة عند الضغط خارجها
 window.onclick = function(event) {
-  if (!event.target.matches('.settings-button')) {
-    const dropdowns = document.getElementsByClassName("dropdown");
-    for (let i = 0; i < dropdowns.length; i++) {
-      dropdowns[i].style.display = "none";
-    }
+  if (!event.target.matches('.settings button')) {
+    document.getElementById('dropdownMenu').style.display = "none";
   }
 }
 </script>
 
 </body>
-      </html>
+    </html>
